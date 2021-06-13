@@ -75,7 +75,7 @@ class PostView(APIView):
 
 class LikeView(APIView):
     '''Like a post'''
-    def post(self, id):
+    def post(self, request, id):
         post = Post.objects.get(pk = id)
         if not post:
             raise Exception('Post Not Found')
@@ -86,7 +86,7 @@ class LikeView(APIView):
 
 class PopularView(APIView):
     '''See the most popular user'''
-    def get(self):
+    def get(self, request):
         users = {}
         posts = Post.objects.all()
         for post in posts:

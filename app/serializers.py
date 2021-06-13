@@ -20,6 +20,7 @@ class UserSerializer(serializers.ModelSerializer):
         instance.save()
         return instance
 
+
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
